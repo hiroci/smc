@@ -19,7 +19,6 @@ int main(int argc, char const *argv[])
     printf("Data (DD/MM/YYYY): ");
     scanf("%2d/%2d/%4d", &day, &month, &year);
 
-    printf("Data formatada:\n");
     printf("%02d de %s de %04d\n", day, mesToString(month), year);
     
     return 0;

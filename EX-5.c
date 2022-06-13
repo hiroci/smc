@@ -22,11 +22,11 @@ int main (void)
 	
 	for(int i = 0; i < 10; i++)
 	{
-		printf("Frequencia de %d \n", i);
 		for(int j = 0; j < frequency[i]; j++)
 		{
 			printf("=");
 		}
+		printf(" %d", i);
 		printf("\n");
 	}
 }
