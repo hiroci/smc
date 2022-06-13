@@ -32,26 +32,18 @@ int main(int argc, char const *argv[])
     for(int i = 0; i < 20; i++) {
         vendedores[i].name = malloc(20 * sizeof(char));
         sprintf(vendedores[i].name, "Vendedor %d", (i + 1));
-        vendedores[i].faturamento = aleatorio(2000, 10000);
+        vendedores[i].faturamento = aleatorio(500, 10000);
     }
 
     for(int i = 0; i < 20; i++) {
         char *name = vendedores[i].name;
         float fat = vendedores[i].faturamento;
 
-        printf("%s - Faturamento: %06.2f\n", name, fat);
+        printf("%s %.2f\n", name, fat);
         int category = (((int)calculateCommission(fat) / 100) - 5);
         
+        range[category]++;
         
-        if(category < 5) {
-            range[category]++;
-        } else if(category >= 5 && category < 7) {
-            range[5]++;
-        } else if(category == 7) {
-            range[6]++;
-        } else if(category >= 8) {
-            range[7]++;
-        }
     }
 
     for(int i = 0; i < 8; i++) {
